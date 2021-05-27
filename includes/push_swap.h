@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/05/18 13:42:08 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/05/27 14:46:06 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,14 @@ int				valid_number(char *str);
 int				only_number(char *str);
 int				has_double(char *str, int *num, int len);
 void			resolve(t_stack *a, t_stack *b);
+
+/** Instructions **/
+void			swap(t_stack *stack);
+void			push(t_stack *stack_a, t_stack *stack_b);
+void			rotate(t_stack *stack);
+void			reverse_rotate(t_stack *stack);
+
+/** Algo **/
+get_pivot(t_stack *stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/05/18 13:43:18 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/05/26 18:09:31 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	resolve(t_stack *a, t_stack *b)
 {
 	if (a->len >= 12)
-		quicksort(a, b);
+		quicksort(a, b); // Algo de tri rapide
 	else
 		short_sort(a, b);
 	stack_del(&a);
