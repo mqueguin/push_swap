@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 14:57:27 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/03 15:09:57 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void			reverse_rotate(t_stack *stack);
 
 /** Algo **/
 int				get_pivot(t_stack *stack_a);
-
+int				lowest_number(t_stack *a,t_stack *b);
 
 int				check_stack_is_valid(t_stack *a, t_stack *b);
+
 #endif
