@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/05/26 18:09:31 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/03 19:49:10 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	resolve(t_stack *a, t_stack *b)
 {
 	if (a->len >= 12)
 		quicksort(a, b); // Algo de tri rapide
-	else
-		short_sort(a, b);
+	// else
+	// 	short_sort(a, b);
 	stack_del(&a);
 	stack_del(&b);
 }
@@ -38,7 +38,7 @@ int		main(int ac, char **av)
 		{
 			//Ici checker en premier si le nombre est valide
 			//Si le nombre est pas valide free la struct et afficher error avec ft_putendl_fd et renvoyer 0
-			if (!valid_number(av[i]) || !only_number(av[i])
+			if (!valid_number(av[i]) //|| !only_number(av[i]
 					|| has_double(av[i], stack_a->num, i - 1))
 			{
 				ft_putendl_fd("Error", 2);

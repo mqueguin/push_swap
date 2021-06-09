@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quicksort.c                                        :+:      :+:    :+:   */
+/*   sort_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/08 14:38:56 by mqueguin         ###   ########.fr       */
+/*   Created: 2021/06/08 13:57:50 by mqueguin          #+#    #+#             */
+/*   Updated: 2021/06/08 14:41:59 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Tri rapide
-void	quicksort(t_stack *a, t_stack *b)
+void	sort_b(t_stack *a, t_stack *b)
 {
-	int		pivot;
-	int		len;
-	int		first;
-	int		i;
+	int	pivot;
+	int	i;
 
-	pivot = get_pivot(a);
-	len = a->len;
+	pivot = get_pivot(b);
 	i = -1;
-	printf("Valeur du pivot : %d\n", pivot);
-	while (++i < len)
+	printf("valeur de len b : %d\n", b->len);
+	while (++i < b->len)
 	{
-		if (a->num[0] <= pivot)
+		if (b->num[0] > pivot)
 		{
-			printf("pb\n");
-			push(b, a); //On pousse a vers b 
+			printf("pa\n");
+			push(b, a);
 		}
 		else
 		{
-			printf("ra\n");
-			rotate(a);
+			printf("rb\n");
+			rotate(b);
 		}
 	}
-	sort_b(a, b);
 }

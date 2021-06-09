@@ -6,15 +6,17 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 15:09:57 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:03:46 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdio.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
 
 typedef struct	s_stack
 {
@@ -39,7 +41,10 @@ void			reverse_rotate(t_stack *stack);
 /** Algo **/
 int				get_pivot(t_stack *stack_a);
 int				lowest_number(t_stack *a,t_stack *b);
+void			quicksort(t_stack *a, t_stack *b);
 
 int				check_stack_is_valid(t_stack *a, t_stack *b);
+
+void			sort_b(t_stack *a, t_stack *b);
 
 #endif
