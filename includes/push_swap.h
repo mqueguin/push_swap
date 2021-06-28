@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/08 14:03:46 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/28 17:55:29 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_stack
 	int			*num;
 	int			len;
 	int			sorted;
+	int			tmpnbr;
 }				t_stack;
 
 t_stack			*new_stack(int len);

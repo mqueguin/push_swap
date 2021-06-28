@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 19:49:10 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/28 14:58:59 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	resolve(t_stack *a, t_stack *b)
 		quicksort(a, b); // Algo de tri rapide
 	// else
 	// 	short_sort(a, b);
-	stack_del(&a);
-	stack_del(&b);
+	//stack_del(&a);
+	//stack_del(&b);
 }
 
 int		main(int ac, char **av)
