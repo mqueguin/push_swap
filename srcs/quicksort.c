@@ -6,73 +6,53 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/28 19:06:39 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:34:29 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 //Tri rapide
-/*
-void	quicksort(t_stack *a, t_stack *b)
-{
-	int		pivot;
-	int		len;
-	int		first;
-	int		i;
 
-	pivot = get_pivot(a);
-	len = a->len;
-	i = -1;
-	printf("Valeur du pivot : %d\n", pivot);
-	while (++i < len)
+static	void	ft_push_last_numbers(t_stack *a, t_stack *b)
+{
+	if (b->num[0] > b->num[1])
 	{
-		if (a->num[0] <= pivot)
-		{
-			printf("pb\n");
-			push(b, a); //On pousse a vers b 
-		}
-		else
-		{
-			printf("ra\n");
-			rotate(a);
-		}
+		printf("pa\n");
+		push(a, b);
+		printf("pa\n");
+		push(a, b);
 	}
-	printf("\nPile A : \n");
+	else
+	{
+		printf("sb\n");
+		swap(b);
+		printf("pa\n");
+		push(a, b);
+		printf("pa\n");
+		push(a, b);
+	}
+	/*printf("\nPile A :\n");
 	for (int i = 0; i < a->len; i++)
 		printf("%d\n", a->num[i]);
 	printf("\nPile B : \n");
 	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);
-	sort_b(a, b); /
+		printf("%d\n", b->num[i]); */
 }
-*/
-static void get_biggest_number(t_stack *a, t_stack *b)
+
+static int get_biggest_number(t_stack *stack)
 {
-	int i;
+	int 	i;
+	int		tmpnbr;
 
 	i = 0;
-	a->tmpnbr = 0;
-	if (!(a) && !(b))
-		return ;
-	if (b->len == 0)
+	tmpnbr = stack->num[0];
+	while (++i < stack->len)
 	{
-		a->tmpnbr = a->num[0];
-		while (i++ < a->len)
-		{	
-			if (a->num[i] > a->tmpnbr)
-				a->tmpnbr = a->num[i];				
-		}
+		if (stack->num[i] > tmpnbr)
+			tmpnbr = stack->num[i];
 	}
-	else 
-	{
-		b->tmpnbr = b->num[0];
-		while (i++ < b->len)
-		{
-			if (b->num[i] > b->tmpnbr)
-			b->tmpnbr = b->num[i];
-		}
-	} 
+	return (tmpnbr);
 }
 
 void ft_recursive_sorting(t_stack *a, t_stack *b)
@@ -82,8 +62,9 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 	int index2;
 
 	i = -1;
-	get_biggest_number(a, b);
-	while (++i < b->len)
+	b->tmpnbr = get_biggest_number(b);
+	printf("Valeur de tmpnbr : %d\n", b->tmpnbr);
+	/*while (++i < b->len)
 	{
 		if (b->tmpnbr == b->num[i])
 		{
@@ -118,17 +99,48 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 				}
 			}
 		}
+	} */
+	while (++i < b->len)
+	{
+		if (b->tmpnbr == b->num[i])
+			break ;
 	}
-	printf("\nPile A :\n");
+	//printf("Valeur de i : %d\n", i);
+	//printf("Valeur de b->len : %d\n", b->len);
+	if (i < b->len - i)
+	{
+	//	printf("Je passe bien ici\n");
+		while (i > 0)
+		{
+			printf("rb\n");
+			rotate(b);
+			i--;
+		}
+		printf("pa\n");
+		push(a, b);
+	}
+	else if (i > b->len - i)
+	{
+		index = b->len - i;
+		while (index > 0)
+		{
+			printf("rrb\n");
+			reverse_rotate(b);
+			index--;
+		}
+		printf("pa\n");
+		push(a, b);
+	}
+	/*printf("\nPile A :\n");
 	for (int i = 0; i < a->len; i++)
 		printf("%d\n", a->num[i]);
 	printf("\nPile B : \n");
 	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);
+		printf("%d\n", b->num[i]); */
 	if (b->len > 2)
 		ft_recursive_sorting(a, b);
 	else
-		return ;
+		ft_push_last_numbers(a, b) ;
 }
 
 void	quicksort(t_stack *a, t_stack *b)
@@ -136,8 +148,7 @@ void	quicksort(t_stack *a, t_stack *b)
 	int i;
 
 	i = -1;
-	get_biggest_number(a, b);
-	printf("tmpnbr = %d\n", a->tmpnbr);
+	a->tmpnbr = get_biggest_number(a);
 	while (a->len > 1)
 	{
 		if (a->num[0] == a->tmpnbr)
@@ -151,11 +162,11 @@ void	quicksort(t_stack *a, t_stack *b)
 			printf("pb\n");
 		}
 	}
-	printf("\nPile A :\n");
+	/*printf("\nPile A :\n");
 	for (int i = 0; i < a->len; i++)
 		printf("%d\n", a->num[i]);
 	printf("\nPile B : \n");
 	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);
+		printf("%d\n", b->num[i]); */
 	ft_recursive_sorting(a, b);
 }
