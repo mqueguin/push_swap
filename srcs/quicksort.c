@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/30 14:05:00 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/30 14:50:26 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,5 +156,30 @@ void	quicksort(t_stack *a, t_stack *b)
 
 void	bigsort(t_stack *a, t_stack *b)
 {
-	
+	int		i;
+	int		pivot;
+
+	pivot = get_pivot(a);
+	printf("Valeur du pivot : %d\n", pivot);
+	i = -1;
+	while (++i < a->len)
+	{
+		if (a->num[0] <= pivot)
+		{
+			printf("pb\n");
+			push(b, a);
+		}
+		else
+		{
+			printf("ra\n");
+			rotate(a);
+		}
+	}
+	sort_b(a, b);
+	/*printf("\nPile A : \n");
+	for (int i = 0; i < a->len; i++)
+		printf("%d\n", a->num[i]);
+	printf("\nPile B : \n");
+	for (int i = 0; i < b->len; i++)
+		printf("%d\n", b->num[i]); */
 }
