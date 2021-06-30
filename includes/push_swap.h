@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/28 17:55:29 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/30 13:02:22 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	s_stack
 	int			len;
 	int			sorted;
 	int			tmpnbr;
+	int			tmpnbr_minus;
 }				t_stack;
 
 t_stack			*new_stack(int len);
@@ -47,5 +48,7 @@ void			quicksort(t_stack *a, t_stack *b);
 int				check_stack_is_valid(t_stack *a, t_stack *b);
 
 void			sort_b(t_stack *a, t_stack *b);
+
+void			bigsort(t_stack *a, t_stack *b);
 
 #endif

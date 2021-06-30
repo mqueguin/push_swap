@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/29 19:30:07 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/30 14:05:00 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,21 @@ static	void	ft_push_last_numbers(t_stack *a, t_stack *b)
 	for (int i = 0; i < b->len; i++)
 		printf("%d\n", b->num[i]);
 	*/
+}
+
+static int	get_min_number(t_stack *stack)
+{
+	int		i;
+	int		tmpnbr;
+
+	i = 0;
+	tmpnbr = stack->num[0];
+	while (++i < stack->len)
+	{
+		if (stack->num[i] < tmpnbr)
+			tmpnbr = stack->num[i];
+	}
+	return (tmpnbr);
 }
 
 static int get_biggest_number(t_stack *stack)
@@ -137,4 +152,9 @@ void	quicksort(t_stack *a, t_stack *b)
 	for (int i = 0; i < b->len; i++)
 		printf("%d\n", b->num[i]); */
 	ft_recursive_sorting(a, b);
+}
+
+void	bigsort(t_stack *a, t_stack *b)
+{
+	
 }
