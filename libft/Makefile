@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2021/05/18 13:25:37 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/06/29 17:49:44 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ SRCS		= 		ft_isalnum.c\
 					ft_toupper.c\
 					ft_atoi.c\
 					ft_strdup.c\
-					ft_itoa.c\
 					ft_memset.c\
 					ft_bzero.c\
 					ft_memcpy.c\

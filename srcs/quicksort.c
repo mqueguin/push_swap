@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/29 15:34:29 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/06/29 19:30:07 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ static	void	ft_push_last_numbers(t_stack *a, t_stack *b)
 		printf("%d\n", a->num[i]);
 	printf("\nPile B : \n");
 	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]); */
+		printf("%d\n", b->num[i]);
+	*/
 }
 
 static int get_biggest_number(t_stack *stack)
@@ -59,47 +60,14 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 {
 	int i;
 	int index;
-	int index2;
 
 	i = -1;
 	b->tmpnbr = get_biggest_number(b);
-	printf("Valeur de tmpnbr : %d\n", b->tmpnbr);
-	/*while (++i < b->len)
+	if (b->len == 2)
 	{
-		if (b->tmpnbr == b->num[i])
-		{
-			if (i >= b->len/2)
-			{
-				index = i;
-				while (index < b->len) 
-				{	
-					index++;
-					if (index == b->len)
-					{
-						reverse_rotate(b);
-						push(a,b);
-					}
-					else
-						reverse_rotate(b);
-				}
-			}
-			else
-			{
-				index2 = i;
-				while (index2 < b->len)
-				{
-					index2++;
-					if (index2 == b->len)
-					{	
-						rotate(b);
-						push(a,b);
-					}
-					else
-						rotate(b);
-				}
-			}
-		}
-	} */
+		ft_push_last_numbers(a, b);
+		return ;
+	}
 	while (++i < b->len)
 	{
 		if (b->tmpnbr == b->num[i])
@@ -119,7 +87,7 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 		printf("pa\n");
 		push(a, b);
 	}
-	else if (i > b->len - i)
+	else if (i > b->len - i || i == b->len - i)
 	{
 		index = b->len - i;
 		while (index > 0)
