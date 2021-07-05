@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/30 13:45:19 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/05 18:41:51 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	resolve(t_stack *a, t_stack *b)
 {
+	if (a_is_sorted(a))
+		return ;
 	if (a->len >= 12)
 		bigsort(a, b);
 	else

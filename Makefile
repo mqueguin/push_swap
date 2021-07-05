@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:36:34 by mqueguin          #+#    #+#              #
-#    Updated: 2021/06/29 17:47:40 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/07/05 18:27:15 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ SRCS		=	./srcs/push_swap.c\
 				./srcs/number_errors.c\
 				./srcs/operations.c\
 				./srcs/quicksort.c\
-				./srcs/sort_b.c\
-				./srcs/stack_managements.c 
+				./srcs/stack_managements.c
 
 INCLUDES	=	./libft/libft.h \
 				./includes/push_swap.h

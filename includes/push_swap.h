@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/30 13:02:22 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:58:30 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ int				check_stack_is_valid(t_stack *a, t_stack *b);
 void			sort_b(t_stack *a, t_stack *b);
 
 void			bigsort(t_stack *a, t_stack *b);
+
+char			*ft_itoa_base(int nbr, char *base);
+
+int				a_is_sorted(t_stack *a);
 
 #endif
