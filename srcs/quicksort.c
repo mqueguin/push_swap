@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 14:59:21 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 17:37:12 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,40 +32,36 @@ static void	ft_push_last_numbers(t_stack *a, t_stack *b)
 	}
 }
 
-static int	get_min_number(t_stack *stack)
+void	reverse_rotate_sorting(t_stack *a, t_stack *b, int i)
 {
-	int		i;
-	int		tmpnbr;
+	int		index;
 
-	i = 0;
-	tmpnbr = stack->num[0];
-	while (++i < stack->len)
+	index = b->len - i;
+	while (index > 0)
 	{
-		if (stack->num[i] < tmpnbr)
-			tmpnbr = stack->num[i];
+		printf("rrb\n");
+		reverse_rotate(b);
+		index--;
 	}
-	return (tmpnbr);
+	printf("pa\n");
+	push(a, b);
 }
 
-static int	get_biggest_number(t_stack *stack)
+void	rotate_sorting(t_stack *a, t_stack *b, int i)
 {
-	int		i;
-	int		tmpnbr;
-
-	i = 0;
-	tmpnbr = stack->num[0];
-	while (++i < stack->len)
+	while (i > 0)
 	{
-		if (stack->num[i] > tmpnbr)
-			tmpnbr = stack->num[i];
+		printf("rb\n");
+		rotate(b);
+		i--;
 	}
-	return (tmpnbr);
+	printf("pa\n");
+	push(a, b);
 }
 
 void	ft_recursive_sorting(t_stack *a, t_stack *b)
 {
 	int		i;
-	int		index;
 
 	i = -1;
 	b->tmpnbr = get_biggest_number(b);
@@ -75,33 +71,12 @@ void	ft_recursive_sorting(t_stack *a, t_stack *b)
 		return ;
 	}
 	while (++i < b->len)
-	{
 		if (b->tmpnbr == b->num[i])
 			break ;
-	}
 	if (i < b->len - i)
-	{
-		while (i > 0)
-		{
-			printf("rb\n");
-			rotate(b);
-			i--;
-		}
-		printf("pa\n");
-		push(a, b);
-	}
+		rotate_sorting(a, b, i);
 	else if (i > b->len - i || i == b->len - i)
-	{
-		index = b->len - i;
-		while (index > 0)
-		{
-			printf("rrb\n");
-			reverse_rotate(b);
-			index--;
-		}
-		printf("pa\n");
-		push(a, b);
-	}
+		reverse_rotate_sorting(a, b, i);
 	if (b->len > 2)
 		ft_recursive_sorting(a, b);
 	else
@@ -128,88 +103,4 @@ void	quicksort(t_stack *a, t_stack *b)
 		}
 	}
 	ft_recursive_sorting(a, b);
-}
-
-void	sort(t_stack *copy)
-{
-	int		i;
-	int		tmp;
-
-	i = 0;
-	while (i < copy->len - 1)
-	{
-		if (copy->num[i] > copy->num[i + 1])
-		{
-			tmp = copy->num[i];
-			copy->num[i] = copy->num[i + 1];
-			copy->num[i + 1] = tmp;
-			i = 0;
-		}
-		else
-			i++;
-	}
-}
-
-void	sort_a_b(t_stack *a, t_stack *b)
-{
-	int		size;
-	int		max_num;
-	int		max_bits;
-	int		i;
-	int		j;
-
-	size = a->len;
-	max_num = size - 1;
-	max_bits = 0;
-	while (max_num >> max_bits)
-		max_bits++;
-	i = 0;
-	while (!a_is_sorted(a))
-	{
-		j = -1;
-		while (++j < size)
-		{
-			if (((a->num[0] >> i) & 1) == 1)
-			{
-				printf("ra\n");
-				rotate(a);
-			}
-			else
-			{
-				printf("pb\n");
-				push(b, a);
-			}
-		}
-		while (b->len > 0)
-		{
-			printf("pa\n");
-			push(a, b);
-		}
-		i++;
-	}
-}
-
-void	bigsort(t_stack *a, t_stack *b)
-{
-	int			i;
-	int			j;
-	int			tmp;
-	t_stack		*copy;
-
-	copy = new_stack(a->len);
-	i = -1;
-	while (++i < a->len)
-		copy->num[i] = a->num[i];
-	sort(copy);
-	i = 0;
-	while (i < a->len)
-	{
-		j = -1;
-		while (++j < copy->len)
-			if (a->num[i] == copy->num[j])
-				a->num[i] = j;
-		i++;
-	}
-	i = -1;
-	sort_a_b(a, b);
 }
