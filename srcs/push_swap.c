@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 17:39:05 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 18:02:55 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	resolve(t_stack *a, t_stack *b)
 		radix_sort(a, b);
 	else
 		quicksort(a, b);
+	stack_del(&a);
+	stack_del(&b);
 }
 
 int	main(int ac, char **av)

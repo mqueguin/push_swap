@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:37:51 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 17:43:42 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 18:03:52 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ void	radix_sort(t_stack *a, t_stack *b)
 	}
 	i = -1;
 	sort_a_b(a, b);
+	stack_del(&copy);
 }
