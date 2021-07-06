@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2021/06/29 17:49:44 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/07/06 14:32:10 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRCS		= 		ft_isalnum.c\
 					ft_calloc.c\
 					ft_substr.c\
 					ft_strjoin.c\
-					ft_split.c\
 					ft_strtrim.c\
 					ft_strmapi.c\
 					ft_strdel.c\
@@ -54,7 +53,8 @@ SRCS		= 		ft_isalnum.c\
 					ft_putchar_fd.c\
 					ft_putstr_fd.c\
 					ft_putendl_fd.c\
-					ft_putnbr_fd.c
+					ft_putnbr_fd.c\
+					ft_itoa.c
 
 SRCS_BONUS	=		ft_lstnew.c\
 					ft_lstadd_front.c\

@@ -6,16 +6,16 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:34:26 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 15:09:24 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:46:17 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		lowest_number(t_stack *a, t_stack *b)
+int	lowest_number(t_stack *a, t_stack *b)
 {
-	int		i;
-	int		first;
+	int	i;
+	int	first;
 
 	first = a->num[0];
 	i = 0;
@@ -33,14 +33,13 @@ int		lowest_number(t_stack *a, t_stack *b)
 	return (first);
 }
 
-//Permet de récupérer le pivot pour l'algo de tri rapide
-int		get_pivot(t_stack *stack_a)
+int	get_pivot(t_stack *stack_a)
 {
-	int		i;
-	int		j;
-	int		pivot;
-	int		left;
-	int		right;
+	int	i;
+	int	j;
+	int	pivot;
+	int	left;
+	int	right;
 
 	i = 0;
 	left = 0;
@@ -52,10 +51,12 @@ int		get_pivot(t_stack *stack_a)
 		pivot = stack_a->num[i];
 		j = -1;
 		while (++j < stack_a->len)
+		{
 			if (pivot < stack_a->num[j])
 				right++;
 			else if (pivot > stack_a->num[j])
 				left++;
+		}
 		i++;
 	}
 	return (pivot);

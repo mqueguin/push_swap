@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 23:09:42 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/01/05 15:37:43 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 13:33:26 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *str;
+	char	*str;
 
-	if (!(str = malloc(count * size)))
+	str = malloc(count * size);
+	if (str == NULL)
 		return (NULL);
 	ft_bzero(str, count * size);
 	return (str);

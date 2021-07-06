@@ -6,13 +6,12 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 12:04:21 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/05/26 14:58:47 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:24:53 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Inverse de la fct rotate
 void	reverse_rotate(t_stack *stack)
 {
 	int		tmp;
@@ -28,13 +27,12 @@ void	reverse_rotate(t_stack *stack)
 	stack->num[0] = tmp;
 }
 
-//Décale tous les élements de 1 vers le sommet (le premier élément devient le dernier)
 void	rotate(t_stack *stack)
 {
 	int		tmp;
 	int		i;
 
-	tmp = stack->num[0]; // Le premier élément qui deviendra le dernier
+	tmp = stack->num[0];
 	i = 0;
 	while (i + 1 < stack->len)
 	{
@@ -44,7 +42,6 @@ void	rotate(t_stack *stack)
 	stack->num[i] = tmp;
 }
 
-//Pousse b vers a
 void	push(t_stack *stack_a, t_stack *stack_b)
 {
 	int		i;
@@ -66,7 +63,6 @@ void	push(t_stack *stack_a, t_stack *stack_b)
 	stack_b->len--;
 }
 
-//Swap les 2 premiers nombre de la pile
 void	swap(t_stack *stack)
 {
 	int		tmp;

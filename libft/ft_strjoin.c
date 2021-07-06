@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 15:09:14 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/18 20:06:57 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:01:28 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_strcpy(char *dst, char const *src)
+static char	*ft_strcpy(char *dst, char const *src)
 {
 	while (*src)
 	{
@@ -24,7 +24,7 @@ static char		*ft_strcpy(char *dst, char const *src)
 	return (dst);
 }
 
-static char		*ft_strcat(char *dst, char const *src)
+static char	*ft_strcat(char *dst, char const *src)
 {
 	size_t	i;
 
@@ -39,7 +39,7 @@ static char		*ft_strcat(char *dst, char const *src)
 	return (dst);
 }
 
-char			*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*str;
@@ -47,7 +47,8 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (str == NULL)
 		return (NULL);
 	ft_strcpy(str, s1);
 	ft_strcat(str, s2);

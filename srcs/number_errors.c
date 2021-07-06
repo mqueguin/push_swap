@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:10:22 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 19:43:50 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:44:45 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		has_double(char *str, int *num, int len)
+int	has_double(char *str, int *num, int len)
 {
 	int		nb;
 	int		i;
@@ -30,30 +30,30 @@ int		has_double(char *str, int *num, int len)
 	return (0);
 }
 
-// int		only_number(char *str)
-// {
-// 	int		nb;
-// 	char	*nb_str;
-// 	int		i;
+int	only_number(char *str)
+{
+	int		nb;
+	char	*nb_str;
+	int		i;
 
-// 	i = 0;
-// 	nb = ft_atoi(str);
-// 	nb_str = ft_atoi(nb);
-// 	while ((str[i] == '0' || str[i] == '+') && str[i + 1])
-// 		i++;
-// 	if (str[i] == nb_str[0])
-// 	{
-// 		ft_strdel(&nb_str);
-// 		return (1);
-// 	}
-// 	ft_strdel(&nb_str);
-// 	return (0);
-// }
+	i = 0;
+	nb = ft_atoi(str);
+	nb_str = ft_itoa(nb);
+	while ((str[i] == '0' || str[i] == '+') && str[i + 1])
+		i++;
+	if (str[i] == nb_str[0])
+	{
+		ft_strdel(&nb_str);
+		return (1);
+	}
+	ft_strdel(&nb_str);
+	return (0);
+}
 
-int		valid_number(char *str)
+int	valid_number(char *str)
 {
 	if ((ft_atoi(str) > 0 && str[0] == '-')
-			 || (ft_atoi(str) < 0 && str[0] != '-'))
+		|| (ft_atoi(str) < 0 && str[0] != '-'))
 		return (0);
 	return (1);
 }

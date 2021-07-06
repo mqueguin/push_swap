@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:47:19 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/09 23:45:01 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 13:55:03 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] && s[i] != c)
 		i++;
 	if (s[i] == c)
-		return ((char*)s + i);
+		return ((char *)s + i);
 	return (0);
 }

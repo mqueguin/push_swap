@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:31:40 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/02/24 11:05:35 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 13:39:34 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
 		return (1);

@@ -6,15 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/05 18:22:29 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:59:21 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Tri rapide
-
-static	void	ft_push_last_numbers(t_stack *a, t_stack *b)
+static void	ft_push_last_numbers(t_stack *a, t_stack *b)
 {
 	if (b->num[0] > b->num[1])
 	{
@@ -32,13 +30,6 @@ static	void	ft_push_last_numbers(t_stack *a, t_stack *b)
 		printf("pa\n");
 		push(a, b);
 	}
-	/*printf("\nPile A :\n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
-	printf("\nPile B : \n");
-	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);
-	*/
 }
 
 static int	get_min_number(t_stack *stack)
@@ -56,9 +47,9 @@ static int	get_min_number(t_stack *stack)
 	return (tmpnbr);
 }
 
-static int get_biggest_number(t_stack *stack)
+static int	get_biggest_number(t_stack *stack)
 {
-	int 	i;
+	int		i;
 	int		tmpnbr;
 
 	i = 0;
@@ -71,10 +62,10 @@ static int get_biggest_number(t_stack *stack)
 	return (tmpnbr);
 }
 
-void ft_recursive_sorting(t_stack *a, t_stack *b)
+void	ft_recursive_sorting(t_stack *a, t_stack *b)
 {
-	int i;
-	int index;
+	int		i;
+	int		index;
 
 	i = -1;
 	b->tmpnbr = get_biggest_number(b);
@@ -88,11 +79,8 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 		if (b->tmpnbr == b->num[i])
 			break ;
 	}
-	//printf("Valeur de i : %d\n", i);
-	//printf("Valeur de b->len : %d\n", b->len);
 	if (i < b->len - i)
 	{
-	//	printf("Je passe bien ici\n");
 		while (i > 0)
 		{
 			printf("rb\n");
@@ -114,21 +102,15 @@ void ft_recursive_sorting(t_stack *a, t_stack *b)
 		printf("pa\n");
 		push(a, b);
 	}
-	/*printf("\nPile A :\n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
-	printf("\nPile B : \n");
-	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]); */
 	if (b->len > 2)
 		ft_recursive_sorting(a, b);
 	else
-		ft_push_last_numbers(a, b) ;
+		ft_push_last_numbers(a, b);
 }
 
 void	quicksort(t_stack *a, t_stack *b)
 {
-	int i;
+	int		i;
 
 	i = -1;
 	a->tmpnbr = get_biggest_number(a);
@@ -145,12 +127,6 @@ void	quicksort(t_stack *a, t_stack *b)
 			printf("pb\n");
 		}
 	}
-	/*printf("\nPile A :\n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
-	printf("\nPile B : \n");
-	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]); */
 	ft_recursive_sorting(a, b);
 }
 
@@ -188,21 +164,21 @@ void	sort_a_b(t_stack *a, t_stack *b)
 	while (max_num >> max_bits)
 		max_bits++;
 	i = 0;
-	while (i < max_bits)
+	while (!a_is_sorted(a))
 	{
 		j = -1;
 		while (++j < size)
 		{
-				if (((a->num[0] >> i)&1) == 1)
-				{
-					printf("ra\n");
-					rotate(a);
-				}
-				else
-				{
-					printf("pb\n");
-					push(b, a);
-				}
+			if (((a->num[0] >> i) & 1) == 1)
+			{
+				printf("ra\n");
+				rotate(a);
+			}
+			else
+			{
+				printf("pb\n");
+				push(b, a);
+			}
 		}
 		while (b->len > 0)
 		{
@@ -210,12 +186,6 @@ void	sort_a_b(t_stack *a, t_stack *b)
 			push(a, b);
 		}
 		i++;
-		/*printf("Pile A : \n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
-	printf("Pile B : \n");
-	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);*/
 	}
 }
 
@@ -224,16 +194,13 @@ void	bigsort(t_stack *a, t_stack *b)
 	int			i;
 	int			j;
 	int			tmp;
-	t_stack 	*copy;
+	t_stack		*copy;
 
 	copy = new_stack(a->len);
 	i = -1;
 	while (++i < a->len)
 		copy->num[i] = a->num[i];
 	sort(copy);
-	/*printf("Pile A : \n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]); */
 	i = 0;
 	while (i < a->len)
 	{
@@ -244,17 +211,5 @@ void	bigsort(t_stack *a, t_stack *b)
 		i++;
 	}
 	i = -1;
-	/*while (++i < a->len)
-	{
-		tmp = ft_atoi(ft_itoa_base(a->num[i], "01"));
-		a->num[i] = tmp;
-	}*/
 	sort_a_b(a, b);
-	/*printf("Pile A : \n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
-	printf("Pile B : \n");
-	for (int i = 0; i < b->len; i++)
-		printf("%d\n", b->num[i]);
-		*/
 }

@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 17:04:48 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/24 14:29:02 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:04:28 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	j = 0;
 	if (needle[0] == '\0')
-		return ((char*)haystack);
+		return ((char *)haystack);
 	else
 	{
 		while (haystack[i])
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			while ((haystack[i + j] == needle[j]) && i + j < len)
 			{
 				if (needle[j + 1] == '\0')
-					return ((char*)haystack + i);
+					return ((char *)haystack + i);
 				j++;
 			}
 			i++;

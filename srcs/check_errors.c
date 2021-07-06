@@ -6,16 +6,15 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 14:41:43 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/05 18:43:59 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:21:55 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// Fonction qui permet de verifier si la stack a est trier
-int		check_stack_is_valid(t_stack *a, t_stack *b)
+int	check_stack_is_valid(t_stack *a, t_stack *b)
 {
-	int		i;
+	int	i;
 
 	i = -1;
 	while (++i < a->len)
@@ -28,8 +27,8 @@ int		check_stack_is_valid(t_stack *a, t_stack *b)
 
 int	a_is_sorted(t_stack *a)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < a->len)

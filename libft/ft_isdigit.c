@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:24:30 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/09 22:26:04 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 13:39:31 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

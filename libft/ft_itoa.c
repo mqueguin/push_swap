@@ -1,32 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 19:20:45 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 13:56:19 by mqueguin         ###   ########.fr       */
+/*   Created: 2020/09/10 19:30:13 by mqueguin          #+#    #+#             */
+/*   Updated: 2021/07/06 14:33:06 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+static int	ft_number_size(long nb)
+{
+	int		len;
+
+	len = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+	{
+		len++;
+		nb *= -1;
+	}
+	while (nb > 0)
+	{
+		len++;
+		nb /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
 {
 	char	*result;
-	int		i;
+	int		len;
+	long	nb;
 
-	i = ft_strlen(s1);
-	result = (char *)malloc(sizeof(char) * i + 1);
+	nb = n;
+	len = ft_number_size(nb);
+	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i])
+	result[len--] = '\0';
+	if (nb < 0)
 	{
-		result[i] = s1[i];
-		i++;
+		result[0] = '-';
+		nb *= -1;
 	}
-	result[i] = '\0';
+	if (nb == 0)
+		result[len] = '0';
+	while (nb > 0)
+	{
+		result[len] = (nb % 10) + 48;
+		nb /= 10;
+		len--;
+	}
 	return (result);
 }

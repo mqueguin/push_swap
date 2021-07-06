@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:26:41 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/06/03 19:40:53 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:32:44 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -48,9 +48,8 @@ int				ft_atoi(const char *str);
 char			*ft_strdup(const char *s1);
 void			ft_strdel(char **str);
 char			*ft_strnstr(const char *haystack, const char *needle,
-		size_t len);
+					size_t len);
 void			*ft_calloc(size_t count, size_t size);
-char			**ft_split(const char *s, char c);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_putchar(char c);
@@ -71,6 +70,8 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *));
+					void (*del)(void *));
+
+char			*ft_itoa(int n);
 
 #endif

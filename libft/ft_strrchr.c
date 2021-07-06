@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:53:57 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/09 23:14:28 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:04:42 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (len >= 0)
 	{
 		if (s[len] == c)
-			return ((char*)s + len);
+			return ((char *)s + len);
 		len--;
 	}
 	return (NULL);
