@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:37:51 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 18:03:52 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/07/07 12:13:50 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,11 @@ void	sort_a_b(t_stack *a, t_stack *b)
 {
 	int		size;
 	int		max_num;
-	int		max_bits;
 	int		i;
 	int		j;
 
 	size = a->len;
 	max_num = size - 1;
-	max_bits = 0;
-	while (max_num >> max_bits)
-		max_bits++;
 	i = 0;
 	while (!a_is_sorted(a))
 	{
