@@ -6,11 +6,54 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 18:02:55 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:53:54 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static void	sort_3_numbers(t_stack*a, t_stack *b)
+{
+	if (a->num[0] > a->num[1] && a->num[1] > a->num[2])
+	{
+		printf("sa\n");
+		swap(a);
+		printf("A :\n");
+		for (int i = 0; i < a->len; i++)
+			printf("%d\n", a->num[i]);
+		printf("rra\n");
+		reverse_rotate(a);
+	}
+	else if (a->num[0] > a->num[1] && a->num[1] < a->num[2])
+	{
+		if (a->num[0] > a->num[2])
+		{
+			printf("ra\n");
+			rotate(a); 
+		}
+		else
+		{
+		 printf("sa\n");
+		 swap(a);
+		}
+	}
+	else if (a->num[0] < a->num[1] && a->num[1] > a->num[2])
+	{
+		
+		if (a->num[0] < a->num[2])
+		{
+			printf("rra\n");
+			reverse_rotate(a);
+			printf("sa\n");
+			swap(a);
+		}
+		else
+		{
+			printf("rra\n");
+			reverse_rotate(a);
+		}
+	}
+}
 
 void	resolve(t_stack *a, t_stack *b)
 {
@@ -18,8 +61,13 @@ void	resolve(t_stack *a, t_stack *b)
 		return ;
 	if (a->len >= 12)
 		radix_sort(a, b);
+	else if (a->len == 3)
+		sort_3_numbers(a, b);
 	else
 		quicksort(a, b);
+	printf("A :\n");
+	for (int i = 0; i < a->len; i++)
+		printf("%d\n", a->num[i]);
 	stack_del(&a);
 	stack_del(&b);
 }
