@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:37:51 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/03 17:08:10 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/03 18:26:36 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,7 @@ void	radix_sort(t_stack *a, t_stack *b)
 		sort_a_b(a, b);
 	}
 	stack_del(&copy);
+	printf("A : \n");
+	for (int i = 0; i < a->len; i++)
+		printf("%d\n", a->num[i]);
 }

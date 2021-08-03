@@ -6,11 +6,24 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:54:48 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/03 17:37:52 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/03 18:21:13 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static void 	rotate_5_numbers(t_stack *a, int i)
+{
+	int		index;
+
+	index = a->len - i;
+	while (index > 0)
+	{
+		printf("rra\n");
+		reverse_rotate(a);
+		index--;
+	}
+}
 
 void	sort_5_numbers(t_stack *a, t_stack *b)
 {
@@ -41,13 +54,7 @@ void	sort_5_numbers(t_stack *a, t_stack *b)
 				}
 			}
 			else
-			{
-				while (a->len - i-- > 0)
-				{
-					printf("rra\n");
-					reverse_rotate(a);
-				}
-			}
+				rotate_5_numbers(a, i);
 		}
 	}
 	sort_3_numbers(a);
@@ -61,4 +68,7 @@ void	sort_5_numbers(t_stack *a, t_stack *b)
 		printf("pa\n");
 		push(a, b);
 	}
+	printf("A :\n");
+	for (int i = 0; i < a->len; i++)
+		printf("%d\n", a->num[i]);
 }
