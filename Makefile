@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:36:34 by mqueguin          #+#    #+#              #
-#    Updated: 2021/07/06 17:47:01 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/08/03 17:19:31 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS		=	./srcs/push_swap.c\
 				./srcs/quicksort.c\
 				./srcs/stack_managements.c\
 				./srcs/radix_sort.c\
+				./srcs/sort_5_numbers.c\
 				./srcs/utils.c
 
 INCLUDES	=	./libft/libft.h \

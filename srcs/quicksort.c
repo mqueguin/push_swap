@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:45:29 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 17:37:12 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/03 16:58:02 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	reverse_rotate_sorting(t_stack *a, t_stack *b, int i)
 	int		index;
 
 	index = b->len - i;
+	//printf("Valeur de index : %d\n", index);
 	while (index > 0)
 	{
 		printf("rrb\n");
@@ -80,17 +81,25 @@ void	ft_recursive_sorting(t_stack *a, t_stack *b)
 	if (b->len > 2)
 		ft_recursive_sorting(a, b);
 	else
-		ft_push_last_numbers(a, b);
+		ft_push_last_numbers(a, b); 
 }
 
 void	quicksort(t_stack *a, t_stack *b)
 {
 	int		i;
+	int		minus;
+	int		index;
 
 	i = -1;
+	index = 0;
 	a->tmpnbr = get_biggest_number(a);
 	while (a->len > 1)
 	{
+	//	printf("Pile A : | Pile B :\n");
+	//	for (int i = 0; i < a->len; i++)
+	//		printf("%d     |     %d\n", a->num[i], b->num[i]);
+		//minus = get_min_number(a);
+	//	printf("Valeur de minus : %d\n", minus);
 		if (a->num[0] == a->tmpnbr)
 		{
 			rotate(a);
@@ -103,4 +112,7 @@ void	quicksort(t_stack *a, t_stack *b)
 		}
 	}
 	ft_recursive_sorting(a, b);
+	//printf("Pile A: \n");
+	//for (int i = 0; i < a->len; i++)
+	//	printf("----> %d <----\n", a->num[i]);
 }

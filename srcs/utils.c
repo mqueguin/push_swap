@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:33:40 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 17:44:25 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/03 16:52:54 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,4 @@ int	get_biggest_number(t_stack *stack)
 	}
 	return (tmpnbr);
 }
+

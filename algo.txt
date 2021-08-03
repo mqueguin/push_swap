@@ -1,0 +1,46 @@
+Quicksort (Tri rapide)
+
+- trier une liste et la renommer
+	Exemple : -424 -76 224 -659 -180 devient 1 3 4 0 2
+
+- Trouver le pivot
+	Exemple dans -424 -76 224 -659 -180 le pivot est 2
+
+- Envoyer tout ce qui est plus petit que le pivot dans b
+	Exemple : A : 3 4 2 B : 0 1
+
+- Trier A et B
+	Appeler algo pour trier 3 nombres pour A
+
+-Envoyer B sur A
+
+Exemple : 1 3 4 0 2
+Pivot = 2
+pb
+3 4 0 2     B : 1
+rra
+rra
+pb
+A : 2 3 4    B : 0 1
+sb
+A : 2 3 4    B : 1 0
+pa
+pa
+A : 0 1 2 3 4
+
+Exemple 2 :
+247 237 728 391 370
+ 1  0    4    3    2
+Pivot 2
+pb
+pb
+A : 4 3 2    B : 0 1
+ra
+A : 3 2 4
+sa
+A : 2 3 4    B :0 1
+sb
+A : 2 3 4    B : 1 0
+pa
+pa
+A : 0 1 2 3 4
