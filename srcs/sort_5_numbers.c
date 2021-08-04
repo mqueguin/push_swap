@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:54:48 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/03 18:21:13 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 14:49:57 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	sort_5_numbers(t_stack *a, t_stack *b)
 		printf("pa\n");
 		push(a, b);
 	}
-	printf("A :\n");
+	/*printf("A :\n");
 	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
+		printf("%d\n", a->num[i]);*/
 }

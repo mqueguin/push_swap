@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:37:51 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/03 18:26:36 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:40:16 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,31 +82,24 @@ void	radix_sort(t_stack *a, t_stack *b)
 	while (++i < a->len)
 		copy->num[i] = a->num[i];
 	sort(copy);
-	i = -1;
-	//printf("Valeur de copy->len et a->len : %d\n %d\n", copy->len, a->len);
-	while (++i < a->len)
+	i = 0;
+	while (i < a->len)
 	{
-		j = -1;
-		while (++j < copy->len)
+		j = 0;
+		while (j < copy->len)
 		{
-	/*		if (j == 49 && i == a->len - 1)
-			{
-				printf("Valeur de a->num : %d\n", a->num[i]);
-				printf("Valeur de j: %d\n", j);
-			}*/
 			if (a->num[i] == copy->num[j])
+			{
 				a->num[i] = j;
+				break ;
+			}
+			j++;
 		}
+		i++;
 	}
 	if (a->len == 5)
 		sort_5_numbers(a, b);
 	else
-	{
-		i = -1;
 		sort_a_b(a, b);
-	}
 	stack_del(&copy);
-	printf("A : \n");
-	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
 }

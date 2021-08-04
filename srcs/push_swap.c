@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/03 17:38:35 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:53:44 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_3_numbers(t_stack*a)
+void	sort_3_numbers(t_stack *a)
 {
 	if (a->num[0] > a->num[1] && a->num[1] > a->num[2])
 	{
@@ -58,10 +58,19 @@ void	resolve(t_stack *a, t_stack *b)
 		return ;
 	if (a->len >= 12 || a->len == 5)
 		radix_sort(a, b);
-	else if (a->len == 3)
-		sort_3_numbers(a);
-	//else if (a->len == 5)
-	//	sort_5_numbers(a, b);
+	else if (a->len <= 3)
+	{
+		if (a->len == 2)
+		{
+			if (a->num[0] > a->num[1])
+			{
+				printf("sa\n");
+				swap(a);
+			}
+		}
+		else
+			sort_3_numbers(a);
+	}
 	else
 		quicksort(a, b);
 	stack_del(&a);
@@ -74,7 +83,7 @@ int	main(int ac, char **av)
 	t_stack		*stack_b;
 	int			i;
 
-	if (ac > 3)
+	if (ac > 2)
 	{
 		stack_a = new_stack(ac - 1);
 		stack_b = new_stack(ac - 1);
