@@ -6,11 +6,27 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:40:30 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:35:03 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static	void	sort_3_numbers_second_part(t_stack *a)
+{	
+	if (a->num[0] < a->num[2])
+	{
+		printf("rra\n");
+		reverse_rotate(a);
+		printf("sa\n");
+		swap(a);
+	}
+	else
+	{
+		printf("rra\n");
+		reverse_rotate(a);
+	}
+}
 
 void	sort_3_numbers(t_stack *a)
 {
@@ -26,30 +42,16 @@ void	sort_3_numbers(t_stack *a)
 		if (a->num[0] > a->num[2])
 		{
 			printf("ra\n");
-			rotate(a); 
+			rotate(a);
 		}
 		else
 		{
-		 printf("sa\n");
-		 swap(a);
-		}
-	}
-	else if (a->num[0] < a->num[1] && a->num[1] > a->num[2])
-	{
-		
-		if (a->num[0] < a->num[2])
-		{
-			printf("rra\n");
-			reverse_rotate(a);
 			printf("sa\n");
 			swap(a);
 		}
-		else
-		{
-			printf("rra\n");
-			reverse_rotate(a);
-		}
 	}
+	else if (a->num[0] < a->num[1] && a->num[1] > a->num[2])
+		sort_3_numbers_second_part(a);
 }
 
 void	resolve(t_stack *a, t_stack *b)
@@ -81,7 +83,6 @@ int	main(int ac, char **av)
 	t_stack		*stack_b;
 	int			i;
 
-	printf("Valeur de ac : %d\n", ac);
 	if (ac > 2)
 	{
 		stack_a = new_stack(ac - 1);

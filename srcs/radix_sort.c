@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:37:51 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:33:56 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:35:52 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,16 @@ void	sort_a_b(t_stack *a, t_stack *b)
 	}
 }
 
+static	void	fill_and_sort_copy(t_stack *copy, t_stack *a)
+{
+	int		i;
+
+	i = -1;
+	while (++i < a->len)
+		copy->num[i] = a->num[i];
+	sort(copy);
+}
+
 void	radix_sort(t_stack *a, t_stack *b)
 {
 	int			i;
@@ -77,27 +87,22 @@ void	radix_sort(t_stack *a, t_stack *b)
 	t_stack		*copy;
 
 	copy = new_stack(a->len);
+	fill_and_sort_copy(copy, a);
 	i = -1;
 	while (++i < a->len)
-		copy->num[i] = a->num[i];
-	sort(copy);
-	i = 0;
-	while (i < a->len)
 	{
-		j = 0;
-		while (j < copy->len)
+		j = -1;
+		while (++j < copy->len)
 		{
 			if (a->num[i] == copy->num[j])
 			{
 				a->num[i] = j;
 				break ;
 			}
-			j++;
 		}
-		i++;
 	}
 	if (a->len == 5)
-		sort_5_numbers(a, b);
+		sort_5_numbers(a, b, -1, get_pivot(a));
 	else
 		sort_a_b(a, b);
 	stack_del(&copy);

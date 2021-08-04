@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:54:48 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:18:40 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:38:14 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void 	rotate_5_numbers(t_stack *a, int i)
+static	void	rotate_5_numbers(t_stack *a, int i)
 {
 	int		index;
 
@@ -25,22 +25,31 @@ static void 	rotate_5_numbers(t_stack *a, int i)
 	}
 }
 
-void	sort_5_numbers(t_stack *a, t_stack *b)
+static	void	sort_5_numbers_second_part(t_stack *a, t_stack *b)
 {
-	int	i;
-	int	pivot;
+	sort_3_numbers(a);
+	if (b->num[0] < b->num[1])
+	{
+		printf("sb\n");
+		swap(b);
+	}
+	while (b->len > 0)
+	{
+		printf("pa\n");
+		push(a, b);
+	}
+}
 
-	pivot = get_pivot(a);
-	i = -1;
+void	sort_5_numbers(t_stack *a, t_stack *b, int i, int pivot)
+{
 	while (a->len > 3)
 	{
-		i++;
 		if (a->num[0] < pivot)
 		{
 			printf("pb\n");
 			push(b, a);
 		}
-		else if (a->num[i] < pivot)
+		else if (a->num[++i] < pivot)
 		{
 			if (i <= a->len - i)
 			{
@@ -54,15 +63,5 @@ void	sort_5_numbers(t_stack *a, t_stack *b)
 				rotate_5_numbers(a, i);
 		}
 	}
-	sort_3_numbers(a);
-	if (b->num[0] < b->num[1])
-	{
-		printf("sb\n");
-		swap(b);
-	}
-	while (b->len > 0)
-	{
-		printf("pa\n");
-		push(a, b);
-	}
+	sort_5_numbers_second_part(a, b);
 }

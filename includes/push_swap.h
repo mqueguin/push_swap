@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:20:12 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:39:50 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int			*num;
 	int			len;
-	int			sorted;
 	int			tmpnbr;
-	int			tmpnbr_minus;
 }				t_stack;
 
 t_stack			*new_stack(int len);
@@ -54,6 +52,6 @@ int				a_is_sorted(t_stack *a);
 
 void			sort_3_numbers(t_stack *a);
 
-void			sort_5_numbers(t_stack *a, t_stack *b);
+void			sort_5_numbers(t_stack *a, t_stack *b, int i, int pivot);
 
 #endif
