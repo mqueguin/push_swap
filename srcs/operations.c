@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 12:04:21 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/02 17:21:47 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 16:31:08 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	push(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_a->num[0] = stack_b->num[0];
 	i = 0;
-	while (i < stack_b->len)
+	while (i < stack_b->len - 1)
 	{
 		stack_b->num[i] = stack_b->num[i + 1];
 		i++;
