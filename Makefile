@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:36:34 by mqueguin          #+#    #+#              #
-#    Updated: 2021/08/04 17:12:09 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/08/04 17:32:52 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,7 @@ SRCS		=	./srcs/push_swap.c\
 				./srcs/operations.c\
 				./srcs/stack_managements.c\
 				./srcs/radix_sort.c\
-				./srcs/sort_5_numbers.c\
-				./srcs/utils.c
+				./srcs/sort_5_numbers.c
 
 INCLUDES	=	./libft/libft.h \
 				./includes/push_swap.h
@@ -45,7 +44,7 @@ OBJS		= ${SRCS:.c=.o}
 
 RM			= rm -f
 
-CFLAGS		=  -g #-Wall -Wextra -Werror
+CFLAGS		=  -g -Wall -Wextra -Werror
 
 .c.o:
 		@${CC} ${CFLAGS} -I${HEAD} -c $< -o ${<:.c=.o}

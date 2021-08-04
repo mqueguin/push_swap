@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:07:35 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 17:40:30 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int ac, char **av)
 	t_stack		*stack_b;
 	int			i;
 
+	printf("Valeur de ac : %d\n", ac);
 	if (ac > 2)
 	{
 		stack_a = new_stack(ac - 1);
