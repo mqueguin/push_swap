@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 15:53:44 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/04 17:07:35 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	resolve(t_stack *a, t_stack *b)
 {
 	if (a_is_sorted(a))
 		return ;
-	if (a->len >= 12 || a->len == 5)
+	if (a->len > 3)
 		radix_sort(a, b);
 	else if (a->len <= 3)
 	{
@@ -71,8 +71,6 @@ void	resolve(t_stack *a, t_stack *b)
 		else
 			sort_3_numbers(a);
 	}
-	else
-		quicksort(a, b);
 	stack_del(&a);
 	stack_del(&b);
 }
