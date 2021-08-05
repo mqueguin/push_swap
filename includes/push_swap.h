@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:12:09 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 18:39:50 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:10:19 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ int				a_is_sorted(t_stack *a);
 void			sort_3_numbers(t_stack *a);
 
 void			sort_5_numbers(t_stack *a, t_stack *b, int i, int pivot);
+
+int				split_arg(t_stack *a, t_stack *b, char *str, char *copy, int count);
 
 #endif

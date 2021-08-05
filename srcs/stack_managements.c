@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:43:23 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/04 17:18:51 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:29:18 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_stack	*new_stack(int len)
 	}
 	else
 		stack->num = 0;
-	stack->sorted = 0;
 	return (stack);
 }
 

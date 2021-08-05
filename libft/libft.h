@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:26:41 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 14:32:44 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:14:41 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void			*ft_memmove(void *dst, const void *src, size_t size);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_strlen(const char *s);
 int				ft_isalpha(int c);
-int				ft_isdigit(int c);
+int				ft_isdigit(char *str);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);

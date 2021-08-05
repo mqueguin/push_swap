@@ -6,15 +6,19 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:24:30 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/07/06 13:39:31 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:13:31 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isdigit(char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	while (*str)
+	{
+		if (*str < 48 || *str > 57)
+			return (0);
+		str++;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2021/07/06 14:32:10 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/08/05 11:35:34 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,21 +81,22 @@ RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror -I.
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			@echo "${GREEN}${BOLD}[ OK ]${END} ${CYAN}${<:.s=.o}${END}"
 
 $(NAME):	${OBJS}
-			ar rc ${NAME} ${OBJS}
+			@ar rc ${NAME} ${OBJS}
 
 bonus:		${NAME} ${OBJS} ${OBJS_BONUS}
-			ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
+			@ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
 
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS} ${OBJS_BONUS}
+			@${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re:			fclean all
 

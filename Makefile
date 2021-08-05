@@ -6,17 +6,18 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:36:34 by mqueguin          #+#    #+#              #
-#    Updated: 2021/08/04 17:32:52 by mqueguin         ###   ########.fr        #
+#    Updated: 2021/08/05 12:30:09 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NC = \033[0m
 RED = \033[0;91m
 ORANGE = \033[93m
-GREEN = \033[0;92m
+GREEN = \x1b[32m
 PURPLE = \033[0;95m
 BLUE = \033[0;34m
 BOLD = \033[1m
+CYAN = \x1b[36m
 
 SRCS		=	./srcs/push_swap.c\
 				./srcs/check_errors.c\
@@ -25,7 +26,8 @@ SRCS		=	./srcs/push_swap.c\
 				./srcs/operations.c\
 				./srcs/stack_managements.c\
 				./srcs/radix_sort.c\
-				./srcs/sort_5_numbers.c
+				./srcs/sort_5_numbers.c\
+				./srcs/utils.c
 
 INCLUDES	=	./libft/libft.h \
 				./includes/push_swap.h
@@ -44,11 +46,11 @@ OBJS		= ${SRCS:.c=.o}
 
 RM			= rm -f
 
-CFLAGS		=  -g -Wall -Wextra -Werror
+CFLAGS		=  -g #-Wall -Wextra -Werror
 
 .c.o:
 		@${CC} ${CFLAGS} -I${HEAD} -c $< -o ${<:.c=.o}
-		@echo "${GREEN}[ OK ]	${ORANGE}${<:.s=.o}${NC}"
+		@echo "${GREEN}[ OK ]	${CYAN}${BOLD}${<:.s=.o}${NC}${NC}"
 
 
 all:		${NAME}
