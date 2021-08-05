@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:17:18 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/05 16:46:32 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/05 18:37:19 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	split_arg(t_stack *a, t_stack *b, char *str, char *copy, int count)
 		a = new_stack(count);
 		b = new_stack(count);
 		b->len = 0;
-		//printf("Valeur de count %d\n", count);
+		printf("Valeur de count %d\n", count);
 		i = count;
 		while (count >= 1)
 		{
@@ -53,8 +53,12 @@ int	split_arg(t_stack *a, t_stack *b, char *str, char *copy, int count)
 			count--;
 		}
 		//printf("Valeur de a->len : %d\n et a->num[2] : %d\n", a->len, a->num[2]);
+		printf("Valeur de a->len : %d\n", a->len);
+		printf("Pile A :\n");
+		for (int i = 0;i < a->len; i++)
+			printf("%d\n", a->num[i]);
 		resolve(a, b);
-		return (1);
+			return (1);
 	}
 	else
 	{
