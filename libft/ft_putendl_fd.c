@@ -6,13 +6,13 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 18:19:42 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/10/13 18:41:54 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/06 16:08:24 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
 	int		i;
 
@@ -26,4 +26,5 @@ void	ft_putendl_fd(char *s, int fd)
 		}
 		write(fd, "\n", 1);
 	}
+	return (0);
 }
