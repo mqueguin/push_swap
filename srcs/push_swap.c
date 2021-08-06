@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:29:31 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/05 18:28:40 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/06 14:49:36 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	resolve(t_stack *a, t_stack *b)
 		else
 			sort_3_numbers(a);
 	}
-	printf("Pile A :\n");
+	/*printf("Pile A :\n");
 	for (int i = 0; i < a->len; i++)
-		printf("%d\n", a->num[i]);
+		printf("%d\n", a->num[i]);*/
 	stack_del(&a);
 	stack_del(&b);
 }

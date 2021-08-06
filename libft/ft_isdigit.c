@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 22:24:30 by mqueguin          #+#    #+#             */
-/*   Updated: 2021/08/05 15:13:31 by mqueguin         ###   ########.fr       */
+/*   Updated: 2021/08/06 14:51:56 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int	ft_isdigit(char *str)
 {
 	while (*str)
 	{
+		if (str[0] == '-' || str[0] == '+')
+			str++;
 		if (*str < 48 || *str > 57)
 			return (0);
-		str++;
+		else
+			str++;
 	}
 	return (1);
 }
